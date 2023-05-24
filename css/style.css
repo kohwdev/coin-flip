@@ -1,0 +1,16 @@
+.coin-tails img{
+ width: 100px;
+ height: 100px;
+ position: absolute;
+}
+
+.coin-heads img{
+ width: 100px;
+ height: 100px;
+}
+
+
+.hidden {
+ visibility: hidden;
+}
+
