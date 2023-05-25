@@ -17,27 +17,10 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  }
-  else if (page == '/otherpage') {
-    //if path name is '/otherpage, read otherpage.html file and display it on the DOM
-    fs.readFile('otherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
-  else if (page == '/otherotherpage') {
-    fs.readFile('otherotherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
-  else if (page == '/api') {
+  } else if (page == '/api') {
     
-    
-    if('student' in params){
-      if(params['student']== 'flip'){
+    if('coin' in params){
+      if(params['coin']== 'flip'){
 
         res.writeHead(200, {'Content-Type': 'application/json'});
         let flipResult = Math.ceil(Math.random() * 2) === 1 ? 'heads' : 'tails'
@@ -46,8 +29,8 @@ const server = http.createServer((req, res) => {
           flip: flipResult,
         }
         res.end(JSON.stringify(objToJson));
-      }//student = leon
-          }//student if
+      }
+    }
   }//else if
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
